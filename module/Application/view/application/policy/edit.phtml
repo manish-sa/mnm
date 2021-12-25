@@ -1,0 +1,82 @@
+<?php
+$form = $this->form;
+$form->get('first_name')->setAttributes([
+    'class'=>'form-control',
+    'placeholder'=>'Enter First Name'
+]);
+
+$form->get('last_name')->setAttributes([
+    'class'=>'form-control',
+    'placeholder'=>'Enter Last Name'
+]);
+
+$form->get('policy_number')->setAttributes([
+    'class'=>'form-control',
+    'placeholder'=>'Enter Policy Number'
+]);
+
+$form->get('start_date')->setAttributes([
+    'class'=>'form-control',
+    'placeholder'=>'Select Start Date'
+]);
+
+$form->get('end_date')->setAttributes([
+    'class'=>'form-control',
+    'placeholder'=>'Select End Date'
+]);
+
+$form->get('premium')->setAttributes([
+    'class'=>'form-control',
+    'placeholder'=>'Enter Premium'
+]);
+$form->get('submit')->setAttributes(['class'=>'btn btn-primary'])->setValue('Update');
+$form->setAttribute('action', $this->url('policy', ['action' => 'edit','id'     => $policy->getId()]));
+$form->prepare();
+?>
+
+<h1>Edit Policy</h1>
+<div class="row">
+    <div class="col-md-6">
+        <?= $this->form()->openTag($form); ?>
+
+        <div class="form-group">
+            <?= $this->formLabel($form->get('first_name')); ?>
+            <?= $this->formElement($form->get('first_name')); ?>
+            <?= $this->formElementErrors($form->get('first_name')); ?>
+        </div>
+
+        <div class="form-group">
+            <?= $this->formLabel($form->get('last_name')); ?>
+            <?= $this->formElement($form->get('last_name')); ?>
+            <?= $this->formElementErrors($form->get('last_name')); ?>
+        </div>
+
+        <div class="form-group">
+            <?= $this->formLabel($form->get('policy_number')); ?>
+            <?= $this->formElement($form->get('policy_number')); ?>
+            <?= $this->formElementErrors($form->get('policy_number')); ?>
+        </div>
+
+        <div class="form-group">
+            <?= $this->formLabel($form->get('start_date')); ?>
+            <?= $this->formElement($form->get('start_date')); ?>
+            <?= $this->formElementErrors($form->get('start_date')); ?>
+        </div>
+
+        <div class="form-group">
+            <?= $this->formLabel($form->get('end_date')); ?>
+            <?= $this->formElement($form->get('end_date')); ?>
+            <?= $this->formElementErrors($form->get('end_date')); ?>
+        </div>
+        <div class="form-group">
+            <?= $this->formLabel($form->get('premium')); ?>
+            <?= $this->formElement($form->get('premium')); ?>
+            <?= $this->formElementErrors($form->get('premium')); ?>
+        </div>
+
+        <?= $this->formElement($form->get('id')); ?>
+        <?= $this->formElement($form->get('submit')); ?>
+        <a class="btn btn-info" href="<?= $this->url('policy'); ?>">Back </a>
+        <?= $this->form()->closeTag(); ?>
+    </div>
+</div>

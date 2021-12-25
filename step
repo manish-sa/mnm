@@ -1,0 +1,13 @@
+I completed the coding task, Please follow the below instructions
+
+checkout the code from https://github.com/manish-sa/mnm
+create database in mysql database
+change the directory to project directory.
+run cp config.php .config.php and set the database details
+run composer install
+run ./vendor/bin/doctrine-module dbal:import import.sql
+run composer run --timeout 0 serve or create vhost entry
+
+Visit the below URL
+
+http://0.0.0.0:8080/policy
